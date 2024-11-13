@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_watermarking,product_watermarking.product_watermarking,base.model_res_config_settings,sales_team.group_sale_salesman,1,1,1,1

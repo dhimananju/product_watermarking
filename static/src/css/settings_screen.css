@@ -1,0 +1,23 @@
+.oe_formview {
+    height: 100%;
+}
+
+.oe_form_binary_file_save {
+	display: none;
+}
+
+.o_karan_class {
+	color: red !important;
+	font-size: 30px;
+}
+
+.oe_form_binary_file_clear {
+	display: none;
+}
+
+.field_binary {
+	width: 300px;
+}
+.oe_inline {
+	min-width: 150px;
+}

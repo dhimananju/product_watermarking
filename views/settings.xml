@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="watermark_configuration_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.watermark</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="50"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Watermark" string="Watermark" name="product_watermarking">
+                        <div class="app_settings_block" data-string="Watermark" string="Watermark" data-key="product_watermarking" >
+                            <h2>Product Image Watermark</h2>
+                            <div class="row mt16 o_settings_container">
+                                <div id="use_watermarking_pad" class="col-xs-12 col-md-12 o_setting_box" >
+                                    <label for="watermarking"/>
+                                    <field name="watermarking" class="oe_inline"/>
+                                </div>
+                                <div class="col-xs-12 col-md-12 o_setting_box" >
+                                    <label for="watermark_picture"/>
+                                    <field name="watermark_picture" widget="image" style="width: 80%"/>
+                                </div>
+                                <div class="col-xs-12 col-md-12 o_setting_box" invisible="watermarking == False">
+                                    <label for="watermarking_option"/>
+                                    <field name="watermarking_option" class="o_light_label oe_inline" widget="selection"/>
+                                </div>
+                                <div class="col-xs-12 col-md-6 o_setting_box" invisible="0">
+                                    <div class="o_setting_left_pane">
+                                        <field name="keep_original_image"/>
+                                    </div>
+                                    <div class="o_setting_right_pane" >
+                                        <label for="keep_original_image"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_watermarking_config_settings_action" model="ir.actions.act_window">
+            <field name="name">watermark settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module':'product_watermarking'}</field>
+        </record>
+
+        <!-- This is the entry in the menu under Configuration -->
+        <!-- <menuitem id="product_watermarking_config_settings_menu_action" name="Watermark" parent="base.menu_users" action="product_watermarking_config_settings_action"/> -->
+    </data>
+</odoo>
